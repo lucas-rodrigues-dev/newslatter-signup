@@ -1,3 +1,4 @@
+/* Estilos Globais */
 * {
     font-family: 'Roboto', sans-serif;
     padding: 0;
@@ -20,15 +21,17 @@ body {
     color: var(--Dark-Blue);
 }
 
+/* Estilo do container da newslatter */
 .newslatter-container {
     background: var(--White);
     max-width: 800px;
     display: flex;
-    height: 500px;
+    height: 510px;
     margin: 4rem auto;
     border-radius: .935rem;
 }
 
+/* Estilos das informações (titulos, descrições e etc) */
 .newslatter-informations {
     margin-left: 3rem;
     margin-top: 3rem;
@@ -66,10 +69,23 @@ body {
     font-weight: 500;
 }
 
+/* Estilo do input */
 .newslatter-email {
    display: flex;
    flex-direction: column;
    margin-top: 2.5rem;
+   position: relative;
+}
+
+.newslatter-email-error-message {
+    color: var(--Light-Orange);
+    display: none;
+    text-align: right;
+    font-size: 13px;
+    font-weight: 600;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .newslatter-email label {
@@ -80,6 +96,7 @@ body {
 }
 
 .newslatter-email-input {
+    font-size: 15px;
     padding: 17px;
     border: 1px solid var(--Grey);
     border-radius: .375rem;
@@ -95,24 +112,25 @@ body {
     outline: none;
 }
 
+/* Estilo do botão de enviar solicitação */
 .newslatter-email-submit-button {
     background: var(--Dark-Slate-Grey);
     color: var(--White);
     width: 20rem;
-    margin: 1.5rem auto;
+    margin: .925rem auto;
     padding: .925rem;
     font-weight: 600;
     text-align: center;
     border: none;
     border-radius: .375rem;
     cursor: pointer;
-    transition: 500ms;
+    transition: 800ms;
 }
 
-.newslatter-email-submit-button:focus {
+.newslatter-email-submit-button:active {
     background: linear-gradient(to right, var(--Light-Pink), var(--Light-Orange));
     color: var(--Dark-Slate-Grey);
-    transition: 500ms;
+    transition: 800ms;
 }
 
 .newslatter-image img { 
@@ -121,25 +139,60 @@ body {
     margin-top: 20px;
 }
 
-.attribution {
-    text-align: center;
+/* Modal de envio bem sucedido */
+.newslatter-success-modal-container {
+    background: var(--White);
+    display: none;
+    max-width: 400px;
+    height: 400px;
+    margin: auto;
+    border-radius: .925rem;
+}
+
+.newslatter-success-modal-information {
+    margin: 2rem;
+    padding-top: 2rem;
+}
+
+.newslatter-success-modal-title {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.newslatter-success-modal-subscription {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.newslatter-success-modal-subscription span {
+    font-weight: 600;
+}
+
+.newslatter-success-modal-dismiss-button button {
+    background: var(--Dark-Slate-Grey);
     color: var(--White);
-}
-
-.attribution a {
-    text-decoration: none;
-    color: var(--Light-Orange);
+    width: 17rem;
+    margin: 1.5rem auto;
+    padding: 1rem;
+    font-weight: 600;
+    text-align: center;
+    border: none;
+    border-radius: .375rem;
+    cursor: pointer;
     transition: 500ms;
 }
 
-.attribution a:hover {
-    color: var(--Light-Green);
+.newslatter-success-modal-dismiss-button button:active {
+    background: linear-gradient(to right, var(--Light-Pink), var(--Light-Orange));
+    color: var(--Dark-Slate-Grey);
     transition: 500ms;
-} 
+}
 
+/* Media Querie para telas menores (celulares e tablets) */
 @media screen and (max-width: 768px) {
     .newslatter-container {
         flex-direction: column; 
+        display: flex;
         height: 52.7rem; 
         border-radius: 0;
         margin: 0;
@@ -167,4 +220,44 @@ body {
     .attribution {
         display: none;
     }
+
+    .newslatter-success-modal-container {
+        background: var(--White);
+        max-width: 100vw;
+        height: 100vh;
+        margin: auto;
+        border-radius: 0;
+    }
+
+    .newslatter-success-modal-information {
+        margin: 0 2rem;
+        padding-top: 10rem;
+    }
+
+    .newslatter-success-modal-dismiss-button {
+        position: absolute;
+        bottom: 0;
+    }
+
+    .newslatter-success-modal-dismiss-button button {
+        position: relative;
+        right: -1.4rem;
+    }
 }
+
+/* Créditos de desenvolvimento */
+.attribution {
+    text-align: center;
+    color: var(--White);
+}
+
+.attribution a {
+    text-decoration: none;
+    color: var(--Light-Orange);
+    transition: 500ms;
+}
+
+.attribution a:hover {
+    color: var(--Light-Green);
+    transition: 500ms;
+} 
